@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="/use_sim_time" value="false"/> 
+  <include file="/home/baron/robot/src/nslam/launch/include/agv_driver.launch.xml" />-->
+  <include file="/home/baron/robot/src/nslam/launch/include/hokuyo_test.launch.xml" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_scan_static_tf" args="0.191 0 0.0 0.0 0 0 /base /laser 100"/> 
+  <include file="/home/baron/robot/src/nslam/launch/include/hector.launch.xml" />
+</launch>

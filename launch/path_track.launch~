@@ -1,0 +1,8 @@
+<launch>
+    <node name="path_track" pkg="agv_driver" type="path_track" output="screen">
+        <param name="pid_p" type="double" value="3.0"/>
+        <param name="pid_i" type="double" value="1.0"/>
+        <param name="pid_d" type="double" value="1.0"/>
+        <param name="ave_vel" type="double" value="0.3"/>
+    </node>
+</launch>

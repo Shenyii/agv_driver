@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="use_sim_time" value="false" />
+  <!--<include file="/home/baron/robot/src/nslam/launch/include/agv_driver.launch.xml" />-->
+  <include file="/home/baron/robot/src/nslam/launch/include/hokuyo_test.launch.xml" />
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_scan_static_tf" args="0.191 0 0.0 0 0 0 /base_link /laser 100"/> 
+  <node name="map_server" pkg="map_server" type="map_server" args="/home/baron/robot/src/nslam/map/pgm.yaml"/>
+  <include file="/home/baron/robot/src/nslam/launch/include/move_base.launch.xml" />
+  <include file="/home/baron/robot/src/nslam/launch/include/amcl.launch.xml" />
+</launch>
+
